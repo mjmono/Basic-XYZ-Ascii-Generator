@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            /* height: 90vh; */
+            min-height: 95vh;
+            /* font-family: 'Varela Round', sans-serif; */
+            /* width: 100vw; */
+            background-color: #fff;
+        }
+
+        .bot {
+            display: flex;
+            justify-content: space-between;
+            height: auto;
+            min-height: 90vh;
+
+            /* align-items: center; */
+        }
+
+        .left {
+            font-family: "Comic Sans MS", cursive;
+            height: auto;
+            width: 20%;
+            background-color: #6ddba4;
+            padding: 30px;
+        }
+
+        .right {
+            width: 75%;
+            height: auto;
+            background-color: #97eddc;
+
+        }
+
+        input,
+        select,
+        button {
+            font-family: "Comic Sans MS", cursive;
+            width: 100%;
+            font-size: 16px;
+            border: none;
+            /* Remove border */
+            border-radius: 5px;
+            /* Remove border-radius */
+            margin-bottom: 10px;
+            padding: 10px;
+            /* Increase padding if necessary */
+            background-color: white;
+            /* Make background transparent */
+            box-shadow: none;
+            /* Remove box shadow */
+        }
+
+
+        select,
+        button {
+            width: 105%;
+        }
+
+        button {
+            margin-top: 30px;
+            background-color: #aef5f1;
+        }
+
+
+        .curve {
+            border-radius: 15px;
+        }
+
+        pre {}
+    </style>
+</head>
+
+<body>
+
+    <!-- <div class="top curve">
+        <h1>SIMPLE XYZ ASCII GENERATOR</h1>
+    </div> -->
+
+    <div class="bot">
+        <div class="left curve">
+            <h2>XYZ Ascii Generator</h2>
+            <label for="letters">Enter a combination of X,Y,Z</label>
+
+            <input type="text" id="letters" placeholder="XYZ">
+            <label for="size">Size (must be odd >=3)</label>
+            <input type="number" id="size" name="size" placeholder="3" min="3" step="2" value="3">
+            <label for="orientation">Select orientation:</label>
+            <select id="orientation" name="orientation">
+                <option value="horizontal">Horizontal</option>
+                <option value="vertical">Vertical</option>
+            </select>
+            <button
+                onclick="GenerateAscii(document.getElementById('letters').value, parseInt(document.getElementById('size').value), document.getElementById('orientation').value)">Generate</button>
+        </div>
+        <div class="right curve">
+            <center>
+                <pre id="ascii"></pre>
+                <!-- <textarea name="" id="ascii" cols="30" rows="30"></textarea> -->
+            </center>
+        </div>
+    </div>
+
+</body>
+
+<script src="script.js"></script>
+
+</html>
